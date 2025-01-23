@@ -21,6 +21,9 @@ mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopol
 // Routes
 app.use('/api', messageRoutes);
 app.use('/api', applicationRoutes)
+app.get('/', (req, res) => {
+    res.send('Welcome to the API!');
+});
 
 // Start the server
 const PORT = process.env.PORT || 5000;
